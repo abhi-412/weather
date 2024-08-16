@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 16px; /* You can adjust this to suit your design */
+}
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+table {
+  @apply w-full border-collapse;
+}
+
+thead {
+  @apply bg-gray-100;
+}
+
+tbody tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+tbody tr:hover {
+  @apply bg-gray-200;
+}
+
+.chart canvas{
+  max-width: 80%;
+  max-height: 340px;
+}

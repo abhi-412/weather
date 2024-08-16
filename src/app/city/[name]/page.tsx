@@ -17,7 +17,6 @@ import { CiTempHigh } from 'react-icons/ci';
 
 const CityDetailsPage: React.FC = () => {
     const searchParams = useSearchParams();
-    const name = searchParams.get('name');
     const lat = searchParams.get('lat');
     const lon = searchParams.get('lon');
 
@@ -31,7 +30,6 @@ const CityDetailsPage: React.FC = () => {
   useEffect(() => {
     const loadWeather = async () => {
       try {
-        
         if (lat && lon) {
           const data = await fetchWeather( lat, lon,unit);
           setWeather(data);
@@ -53,8 +51,10 @@ const CityDetailsPage: React.FC = () => {
     };
 
     loadWeather();
-  }, [name, lat, lon, unit]);
+  }, [lat, lon, unit]);
 
+  console.log(weather);
+  
 
   if (loading) return <p className="text-center text-gray-500">Loading weather...</p>;
   if (error) return <p className="text-center text-red-500">{error}</p>;

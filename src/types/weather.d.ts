@@ -1,6 +1,7 @@
 // src/types/weather.d.ts
 
 export interface Weather {
+    name: string;
     main: {
       temp: number;
       temp_max: number;
@@ -9,6 +10,7 @@ export interface Weather {
       pressure: number;
     };
     weather: {
+      main: string;
       description: string;
       icon: string;
     }[];

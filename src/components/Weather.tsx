@@ -5,19 +5,21 @@
 import React, { useState } from 'react';
 import { fetchWeather } from '../utils/weatherService';
 import { Weather } from '../types/weather';
+import { useUnit } from '../context/UnitContext';
+
 
 const WeatherTest: React.FC = () => {
   const [city, setCity] = useState<string>('London');
   const [weather, setWeather] = useState<Weather | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-
+  const { unit } = useUnit();
   const handleFetchWeather = async () => {
     setLoading(true);
     const lat = '51.5073219';
     const lon = '-0.1276474';
     try {
-      const data = await fetchWeather(lat,lon);
+      const data = await fetchWeather(lat,lon,unit);
       setWeather(data);
       setError(null);
     } catch (err) {

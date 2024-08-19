@@ -5,7 +5,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 import {Group} from "three"
 
 const ButterFly = ({...props}) => {
-    const group = useRef()
+    const group = useRef<Group>();
     const { nodes, materials, animations } = useGLTF('/animated_butterfly.glb')
     const { actions } = useAnimations(animations, group)
 

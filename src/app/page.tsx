@@ -4,7 +4,6 @@ import React from 'react';
 import '../styles/globals.css';
 import Link from 'next/link';
 import CityTest from '@/components/City';
-import Loader from '@/components/Loader';
 
 const HomePage: React.FC = () => {
   return (
@@ -25,8 +24,7 @@ const HomePage: React.FC = () => {
       <main className="space-y-12">
         <section>
 
-        <Loader />
-          {/* <CityTest /> */}
+          <CityTest />
         </section>
       </main>
       <footer className="mt-12 text-center text-gray-500 text-sm">
